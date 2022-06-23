@@ -12,6 +12,16 @@
 //   l.insertLast('c')
 //   midpoint(l); // returns { data: 'b' }
 
-function midpoint(list) {}
+function midpoint(list) {
+  let slow = list.getFirst();
+  let fast = list.getFirst();
+  // if the person is going with exact double speed and reached destination then the slow person will cover half distance
+  //if next elements available then move else slow will be the middle point
+  while (fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+  return slow;
+}
 
 module.exports = midpoint;

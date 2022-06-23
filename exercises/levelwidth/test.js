@@ -1,11 +1,11 @@
-const Node = require('./node');
-const levelWidth = require('./index');
+const Node = require("./node");
+const levelWidth = require("./index");
 
-test('levelWidth is a function', () => {
-  expect(typeof levelWidth).toEqual('function');
+test("levelWidth is a function", () => {
+  expect(typeof levelWidth).toEqual("function");
 });
 
-test('levelWidth returns number of nodes at widest point', () => {
+test("levelWidth returns number of nodes at widest point", () => {
   const root = new Node(0);
   root.add(1);
   root.add(2);
@@ -13,10 +13,11 @@ test('levelWidth returns number of nodes at widest point', () => {
   root.children[0].add(4);
   root.children[2].add(5);
 
+  // display no. of items in every level
   expect(levelWidth(root)).toEqual([1, 3, 2]);
 });
 
-test('levelWidth returns number of nodes at widest point', () => {
+test("levelWidth returns number of nodes at widest point", () => {
   const root = new Node(0);
   root.add(1);
   root.children[0].add(2);
