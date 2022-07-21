@@ -21,12 +21,14 @@ function memoization(fn) {
     }
   };
 }
+
 function slowFib(n) {
   if (n < 2) return n;
   return fib(n - 1) + fib(n - 2);
 }
 
 const fib = memoization(slowFib);
+
 // solution3 - takes long time so better to add memoization
 // time complexity - O(2^n)
 function fib3(n) {
